@@ -3,6 +3,17 @@
     "extends": ["github>1024pix/renovate-config:default.json"],
     "enabled": true,
     "includeForks": true,
+    "packageRules": [
+        {
+            "description": "autoMerge metabase upgrade",
+            "matchDatasources": ["github-tags"],
+            "matchManagers": [ "regex" ],
+            "matchPackageNames": ["metabase/metabase"],
+            "matchUpdateTypes": ["minor", "patch"],
+            "addLabels": ["renovate/automerge"],
+            "automerge": true
+        }
+    ],
     "regexManagers": [
         {
             "fileMatch": ["^bin/version$"],
