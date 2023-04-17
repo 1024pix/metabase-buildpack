@@ -1,0 +1,29 @@
+name: Bump version
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{ github.sha }}
+        fetch-depth: '0'
+    - name: Set variables
+      run: |
+        METABASE_VERSION=$(head bin/version)
+        echo "VERSION=v$METABASE_VERSION" >> $GITHUB_ENV
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@1.61.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        CUSTOM_TAG: ${{ env.VERSION }}
