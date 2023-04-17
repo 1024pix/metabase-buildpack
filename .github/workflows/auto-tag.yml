@@ -1,18 +1,12 @@
 name: Bump version
 on:
-  pull_request:
-    types:
-      - closed
-    branches:
-      - main
   push:
-    branches:
-      - main
+    paths:
+      - "bin/version"
   workflow_dispatch:
 
 jobs:
   build:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
