@@ -10,7 +10,7 @@
             "matchManagers": [ "regex" ],
             "matchPackageNames": ["metabase/metabase"],
             "matchUpdateTypes": ["minor", "patch"],
-            "addLabels": ["renovate/automerge"],
+            "addLabels": ["renovate/automerge","metabase",":rocket: Ready to Merge"],
             "automerge": true,
             "platformAutomerge": true
         }
