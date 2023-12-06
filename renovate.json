@@ -4,18 +4,6 @@
     "enabled": true,
     "includeForks": true,
     "minimumReleaseAge": "0",
-    "packageRules": [
-        {
-            "description": "autoMerge metabase upgrade",
-            "matchDatasources": ["github-tags"],
-            "matchManagers": [ "regex" ],
-            "matchPackageNames": ["metabase/metabase"],
-            "matchUpdateTypes": ["minor", "patch"],
-            "addLabels": ["renovate/automerge","metabase",":rocket: Ready to Merge"],
-            "automerge": true,
-            "platformAutomerge": true
-        }
-    ],
     "regexManagers": [
         {
             "fileMatch": ["^bin/version$"],
