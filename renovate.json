@@ -1,13 +1,20 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": ["github>1024pix/renovate-config:default.json"],
+    "extends": [
+        "github>1024pix/renovate-config:default.json"
+    ],
     "enabled": true,
-    "includeForks": true,
+    "forkProcessing": "enabled",
     "minimumReleaseAge": "0",
-    "regexManagers": [
+    "customManagers": [
         {
-            "fileMatch": ["^bin/version$"],
-            "matchStrings": ["^(?<currentValue>\\S+)\\n?$"],
+            "customType": "regex",
+            "fileMatch": [
+                "^bin/version$"
+            ],
+            "matchStrings": [
+                "^(?<currentValue>\\S+)\\n?$"
+            ],
             "depNameTemplate": "metabase/metabase",
             "datasourceTemplate": "github-tags",
             "extractVersionTemplate": "v(?<version>.*)"
