@@ -16,7 +16,7 @@
                 "^(?<currentValue>\\S+)\\n?$"
             ],
             "depNameTemplate": "metabase/metabase",
-            "datasourceTemplate": "github-tags",
+            "datasourceTemplate": "github-releases",
             "extractVersionTemplate": "v(?<version>.*)"
         }
     ]
