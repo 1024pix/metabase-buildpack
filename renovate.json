@@ -17,8 +17,15 @@
                 "^(?<currentValue>\\S+)\\n?$"
             ],
             "depNameTemplate": "metabase/metabase",
-            "datasourceTemplate": "github-releases",
+            "datasourceTemplate": "docker",
             "extractVersionTemplate": "v(?<version>.*)"
         }
+    ],
+    "packageRules": [
+      {
+        "matchPackageNames": ["metabase/metabase"],
+        "sourceUrl": "https://github.com/metabase/metabase/",
+        "changelogUrl": "https://www.metabase.com/changelog"
+      }
     ]
 }
